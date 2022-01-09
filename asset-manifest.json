@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/25-5-clock/static/js/main.919a5e0a.js",
+    "static/js/787.1e2b2e38.chunk.js": "/25-5-clock/static/js/787.1e2b2e38.chunk.js",
+    "index.html": "/25-5-clock/index.html",
+    "main.919a5e0a.js.map": "/25-5-clock/static/js/main.919a5e0a.js.map",
+    "787.1e2b2e38.chunk.js.map": "/25-5-clock/static/js/787.1e2b2e38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.919a5e0a.js"
+  ]
+}
