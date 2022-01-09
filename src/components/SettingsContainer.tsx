@@ -1,14 +1,24 @@
 import SettingsContainerStyled from "../styles/SettingsContainerStyled";
 import LengtController from "./LengtController";
 
-const SettingsContainer = () => {
+interface SettingsContainerProps {
+  breakLength: number;
+  setBreakLength: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const SettingsContainer = ({
+  breakLength,
+  setBreakLength,
+}: SettingsContainerProps) => {
   return (
     <SettingsContainerStyled>
       <LengtController
         id="break-label"
         decrementId="break-decrement"
         incrementId="break-increment"
+        lengthId="break-length"
         label="Break Length"
+        value={breakLength}
       />
       <LengtController
         id="session-label"
