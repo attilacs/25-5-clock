@@ -9,7 +9,11 @@ const SettingsContainer = () => {
         decrementId="break-decrement"
         label="Break Length"
       />
-      <LengtController id="session-label" label="Session Length" />
+      <LengtController
+        id="session-label"
+        decrementId="session-decrement"
+        label="Session Length"
+      />
     </SettingsContainerStyled>
   );
 };
