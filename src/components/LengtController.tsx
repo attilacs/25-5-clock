@@ -1,7 +1,7 @@
 import {
-  LengtControlContainer,
+  LengthControlContainer,
   ButtonsContainer
-} from "../styles/LengtControlStyled";
+} from "../styles/LengthControlStyled";
 import Button from "./Button";
 
 interface LengtControllerProps {
@@ -12,12 +12,12 @@ interface LengtControllerProps {
 
 const LengtController = ({ id, label, decrementId }: LengtControllerProps) => {
   return (
-    <LengtControlContainer id={id}>
+    <LengthControlContainer id={id}>
       <div>{label}</div>
       <ButtonsContainer>
         <Button id={decrementId}>⇓</Button>
       </ButtonsContainer>
-    </LengtControlContainer>
+    </LengthControlContainer>
   );
 };
 
