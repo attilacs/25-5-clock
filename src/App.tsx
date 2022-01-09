@@ -1,5 +1,11 @@
+import AppStyled from "./styles/AppStyled";
+
 const App = () => {
-  return <></>;
+  return (
+    <>
+      <AppStyled />
+    </>
+  );
 };
 
 export default App;
