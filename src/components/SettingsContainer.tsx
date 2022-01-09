@@ -4,7 +4,7 @@ import LengtController from "./LengtController";
 const SettingsContainer = () => {
   return (
     <SettingsContainerStyled>
-      <LengtController />
+      <LengtController id="break-label" label="Break Length" />
     </SettingsContainerStyled>
   );
 };
