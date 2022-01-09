@@ -4,7 +4,11 @@ import LengtController from "./LengtController";
 const SettingsContainer = () => {
   return (
     <SettingsContainerStyled>
-      <LengtController id="break-label" label="Break Length" />
+      <LengtController
+        id="break-label"
+        decrementId="break-decrement"
+        label="Break Length"
+      />
       <LengtController id="session-label" label="Session Length" />
     </SettingsContainerStyled>
   );
