@@ -5,6 +5,7 @@ const SettingsContainer = () => {
   return (
     <SettingsContainerStyled>
       <LengtController id="break-label" label="Break Length" />
+      <LengtController id="session-label" label="Session Length" />
     </SettingsContainerStyled>
   );
 };
