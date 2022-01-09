@@ -5,6 +5,8 @@ import AppStyled from "./styles/AppStyled";
 
 const App = () => {
   const [breakLength, setBreakLength] = useState(5);
+  const [sessionLength, setSessionLength] = useState(25);
+
   return (
     <>
       <AppStyled />
@@ -12,6 +14,8 @@ const App = () => {
       <SettingsContainer
         breakLength={breakLength}
         setBreakLength={setBreakLength}
+        sessionLength={sessionLength}
+        setSessionLength={setSessionLength}
       />
     </>
   );
