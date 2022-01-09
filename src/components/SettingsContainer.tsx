@@ -1,7 +1,12 @@
 import SettingsContainerStyled from "../styles/SettingsContainerStyled";
+import LengtController from "./LengtController";
 
 const SettingsContainer = () => {
-  return <SettingsContainerStyled></SettingsContainerStyled>;
+  return (
+    <SettingsContainerStyled>
+      <LengtController />
+    </SettingsContainerStyled>
+  );
 };
 
 export default SettingsContainer;
