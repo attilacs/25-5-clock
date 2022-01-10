@@ -1,8 +1,6 @@
 import { Minus, Plus } from "@styled-icons/boxicons-regular";
-import {
-  LengthControlContainer,
-  ButtonsContainer
-} from "../styles/LengthControlStyled";
+import ButtonsContainer from "../styles/ButtonContainer";
+import { LengthControlContainer } from "../styles/LengthControlStyled";
 import Button from "./Button";
 
 interface LengthControllerProps {
