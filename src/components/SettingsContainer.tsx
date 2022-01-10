@@ -1,5 +1,5 @@
 import SettingsContainerStyled from "../styles/SettingsContainerStyled";
-import LengtController from "./LengtController";
+import LengthController from "./LengthController";
 
 interface SettingsContainerProps {
   breakLength: number;
@@ -16,7 +16,7 @@ const SettingsContainer = ({
 }: SettingsContainerProps) => {
   return (
     <SettingsContainerStyled>
-      <LengtController
+      <LengthController
         id="break-label"
         decrementId="break-decrement"
         incrementId="break-increment"
@@ -24,7 +24,7 @@ const SettingsContainer = ({
         label="Break Length"
         value={breakLength}
       />
-      <LengtController
+      <LengthController
         id="session-label"
         decrementId="session-decrement"
         incrementId="session-increment"

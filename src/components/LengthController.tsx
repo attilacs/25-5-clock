@@ -4,7 +4,7 @@ import {
 } from "../styles/LengthControlStyled";
 import Button from "./Button";
 
-interface LengtControllerProps {
+interface LengthControllerProps {
   id: string;
   label: string;
   decrementId: string;
@@ -13,14 +13,14 @@ interface LengtControllerProps {
   value: number;
 }
 
-const LengtController = ({
+const LengthController = ({
   id,
   label,
   decrementId,
   incrementId,
   lengthId,
   value
-}: LengtControllerProps) => {
+}: LengthControllerProps) => {
   return (
     <LengthControlContainer id={id}>
       <div>{label}</div>
@@ -33,4 +33,4 @@ const LengtController = ({
   );
 };
 
-export default LengtController;
+export default LengthController;
