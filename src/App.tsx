@@ -1,4 +1,4 @@
-import { Pause, Play } from "@styled-icons/boxicons-regular";
+import { Pause, Play, Reset } from "@styled-icons/boxicons-regular";
 import { useState } from "react";
 import Button from "./components/Button";
 import Heading from "./components/Heading";
@@ -42,6 +42,9 @@ const App = () => {
           ) : (
             <Play onClick={timerControl} size={iconSize} />
           )}
+        </Button>
+        <Button id="reset">
+          <Reset onClick={resetTimer} size={iconSize} />
         </Button>
       </ButtonsContainer>
     </>
