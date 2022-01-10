@@ -9,8 +9,10 @@ import ButtonsContainer from "./styles/ButtonContainer";
 
 const App = () => {
   const defaultBreakLength = 5;
-  const [sessionLength, setSessionLength] = useState(25);
+  const defaultSessionLength = 25;
+
   const [breakLength, setBreakLength] = useState(defaultBreakLength);
+  const [sessionLength, setSessionLength] = useState(defaultSessionLength);
   const [isRunning, setIsRunnig] = useState(false);
 
   const iconSize = 48;
