@@ -8,8 +8,9 @@ import AppStyled from "./styles/AppStyled";
 import ButtonsContainer from "./styles/ButtonContainer";
 
 const App = () => {
-  const [breakLength, setBreakLength] = useState(5);
+  const defaultBreakLength = 5;
   const [sessionLength, setSessionLength] = useState(25);
+  const [breakLength, setBreakLength] = useState(defaultBreakLength);
   const [isRunning, setIsRunnig] = useState(false);
 
   const iconSize = 48;
