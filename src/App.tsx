@@ -9,6 +9,10 @@ const App = () => {
   const [sessionLength, setSessionLength] = useState(25);
   const [isRunning, setIsRunnig] = useState(false);
 
+  const timerControl = () => {
+    setIsRunnig(!isRunning);
+  };
+
   return (
     <>
       <AppStyled />
