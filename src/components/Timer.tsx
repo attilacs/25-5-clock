@@ -4,7 +4,11 @@ import {
   TimerStyled
 } from "../styles/TimerStyled";
 
-const Timer = () => {
+interface TimerProps {
+  secondsLeft: number;
+}
+
+const Timer = ({ secondsLeft }: TimerProps) => {
   const displayClock = (seconds: number) => {
     const min = Math.floor(seconds / 60);
     const sec = seconds % 60;

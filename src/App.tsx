@@ -40,7 +40,7 @@ const App = () => {
         sessionLength={sessionLength}
         setSessionLength={setSessionLength}
       />
-      <Timer />
+      <Timer secondsLeft={timeLeft} />
       <ButtonsContainer>
         <Button id="start_stop">
           {isRunning ? (
