@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Heading from "./components/Heading";
 import SettingsContainer from "./components/SettingsContainer";
+import Timer from "./components/Timer";
 import AppStyled from "./styles/AppStyled";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         sessionLength={sessionLength}
         setSessionLength={setSessionLength}
       />
+      <Timer />
     </>
   );
 };
