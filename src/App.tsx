@@ -27,6 +27,7 @@ const App = () => {
     setIsRunnig(false);
     setBreakLength(defaultBreakLength);
     setSessionLength(defaultSessionLength);
+    setTimeLeft(defaultSessionLength * 60);
   };
 
   return (
