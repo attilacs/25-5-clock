@@ -14,6 +14,7 @@ const App = () => {
   const [breakLength, setBreakLength] = useState(defaultBreakLength);
   const [sessionLength, setSessionLength] = useState(defaultSessionLength);
   const [isRunning, setIsRunnig] = useState(false);
+  const [isSession, setIsSession] = useState(true);
 
   const iconSize = 48;
 
