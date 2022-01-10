@@ -7,6 +7,7 @@ import AppStyled from "./styles/AppStyled";
 const App = () => {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
+  const [isRunning, setIsRunnig] = useState(false);
 
   return (
     <>
