@@ -23,8 +23,8 @@ const App = () => {
 
   const resetTimer = () => {
     setIsRunnig(false);
-    setBreakLength(5);
-    setSessionLength(25);
+    setBreakLength(defaultBreakLength);
+    setSessionLength(defaultSessionLength);
   };
 
   return (
