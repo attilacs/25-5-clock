@@ -18,7 +18,9 @@ const Timer = ({ secondsLeft }: TimerProps) => {
   return (
     <TimerStyled>
       <TimerLabelStyled id="timer-label">Session</TimerLabelStyled>
-      <TimeLeftStyled id="time-left">25:00</TimeLeftStyled>
+      <TimeLeftStyled id="time-left">
+        {displayClock(secondsLeft)}
+      </TimeLeftStyled>
     </TimerStyled>
   );
 };
