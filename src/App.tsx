@@ -18,6 +18,12 @@ const App = () => {
     setIsRunnig(!isRunning);
   };
 
+  const resetTimer = () => {
+    setIsRunnig(false);
+    setBreakLength(5);
+    setSessionLength(25);
+  };
+
   return (
     <>
       <AppStyled />
