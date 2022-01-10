@@ -1,3 +1,4 @@
+import { Minus, Plus } from "@styled-icons/boxicons-regular";
 import {
   LengthControlContainer,
   ButtonsContainer
@@ -21,13 +22,19 @@ const LengthController = ({
   lengthId,
   value
 }: LengthControllerProps) => {
+  const buttonSize = 24;
+
   return (
     <LengthControlContainer id={id}>
       <div>{label}</div>
       <ButtonsContainer>
-        <Button id={decrementId}>⇓</Button>
+        <Button id={decrementId}>
+          <Minus size={buttonSize} />
+        </Button>
         <div id={lengthId}>{value}</div>
-        <Button id={incrementId}>⇑</Button>
+        <Button id={incrementId}>
+          <Plus size={buttonSize} />
+        </Button>
       </ButtonsContainer>
     </LengthControlContainer>
   );

@@ -1,8 +1,9 @@
+import { ReactElement } from "react";
 import ButtonStyled from "../styles/ButtonStyled";
 
 interface ButtonProps {
   id: string;
-  children: string;
+  children: ReactElement;
 }
 
 const Button = ({ children, id }: ButtonProps) => (
