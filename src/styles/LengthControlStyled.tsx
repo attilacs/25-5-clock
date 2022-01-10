@@ -6,6 +6,7 @@ export const LengthControlContainer = styled.div`
 `;
 
 export const ButtonsContainer = styled.div`
+  align-items: center;
   display: flex;
   justify-content: space-between;
   margin: auto;
