@@ -68,7 +68,12 @@ const App = () => {
               <Minus size={lengthControlIconSize} />
             </ButtonStyled>
             <div id="session-length">{sessionLength}</div>
-            <ButtonStyled id="session-increment">
+            <ButtonStyled
+              id="session-increment"
+              onClick={() =>
+                incrementLength(sessionLength, setSessionLength, isRunning)
+              }
+            >
               <Plus size={lengthControlIconSize} />
             </ButtonStyled>
           </ButtonsContainer>
