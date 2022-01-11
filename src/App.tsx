@@ -7,7 +7,7 @@ import {
 } from "@styled-icons/boxicons-regular";
 import { useState } from "react";
 import Heading from "./components/Heading";
-import { incrementLength } from "./components/service";
+import { decrementLength, incrementLength } from "./components/service";
 import Timer from "./components/Timer";
 import AppStyled from "./styles/AppStyled";
 import ButtonsContainer from "./styles/ButtonContainer";
@@ -47,7 +47,12 @@ const App = () => {
         <LengthControlContainer id="break-label">
           <div>Break Length</div>
           <ButtonsContainer>
-            <ButtonStyled id="break-decrement">
+            <ButtonStyled
+              id="break-decrement"
+              onClick={() =>
+                decrementLength(breakLength, setBreakLength, isRunning)
+              }
+            >
               <Minus size={lengthControlIconSize} />
             </ButtonStyled>
             <div id="break-length">{breakLength}</div>
