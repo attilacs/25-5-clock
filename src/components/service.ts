@@ -2,7 +2,7 @@ export const incrementLength = (
   value: number,
   setter: React.Dispatch<React.SetStateAction<number>>,
   isRunning: boolean,
-  timeLeftSetter?: React.Dispatch<React.SetStateAction<number>>
+  timeLeftSetter: React.Dispatch<React.SetStateAction<number>>
 ) => {
   const maxLength = 60;
   if (!isRunning && value < maxLength) {
@@ -18,7 +18,7 @@ export const decrementLength = (
   value: number,
   setter: React.Dispatch<React.SetStateAction<number>>,
   isRunning: boolean,
-  timeLeftSetter?: React.Dispatch<React.SetStateAction<number>>
+  timeLeftSetter: React.Dispatch<React.SetStateAction<number>>
 ) => {
   const minLength = 1;
   if (!isRunning && minLength < value) {
