@@ -1,11 +1,11 @@
 import { Pause, Play, Reset } from "@styled-icons/boxicons-regular";
 import { useState } from "react";
-import Button from "./components/Button";
 import Heading from "./components/Heading";
 import SettingsContainer from "./components/SettingsContainer";
 import Timer from "./components/Timer";
 import AppStyled from "./styles/AppStyled";
 import ButtonsContainer from "./styles/ButtonContainer";
+import ButtonStyled from "./styles/ButtonStyled";
 
 const App = () => {
   const defaultBreakLength = 5;
@@ -42,16 +42,16 @@ const App = () => {
       />
       <Timer secondsLeft={timeLeft} />
       <ButtonsContainer>
-        <Button id="start_stop">
+        <ButtonStyled id="start_stop">
           {isRunning ? (
             <Pause onClick={timerControl} size={iconSize} />
           ) : (
             <Play onClick={timerControl} size={iconSize} />
           )}
-        </Button>
-        <Button id="reset">
+        </ButtonStyled>
+        <ButtonStyled id="reset">
           <Reset onClick={resetTimer} size={iconSize} />
-        </Button>
+        </ButtonStyled>
       </ButtonsContainer>
     </>
   );
