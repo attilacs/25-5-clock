@@ -50,7 +50,13 @@ const App = () => {
             <ButtonStyled
               id="break-decrement"
               onClick={() =>
-                decrementLength(breakLength, setBreakLength, isRunning)
+                decrementLength(
+                  breakLength,
+                  setBreakLength,
+                  isRunning,
+                  setTimeLeft,
+                  !isSession
+                )
               }
             >
               <Minus size={lengthControlIconSize} />
@@ -59,7 +65,13 @@ const App = () => {
             <ButtonStyled
               id="break-increment"
               onClick={() =>
-                incrementLength(breakLength, setBreakLength, isRunning)
+                incrementLength(
+                  breakLength,
+                  setBreakLength,
+                  isRunning,
+                  setTimeLeft,
+                  !isSession
+                )
               }
             >
               <Plus size={lengthControlIconSize} />
@@ -76,7 +88,8 @@ const App = () => {
                   sessionLength,
                   setSessionLength,
                   isRunning,
-                  setTimeLeft
+                  setTimeLeft,
+                  isSession
                 )
               }
             >
@@ -90,7 +103,8 @@ const App = () => {
                   sessionLength,
                   setSessionLength,
                   isRunning,
-                  setTimeLeft
+                  setTimeLeft,
+                  isSession
                 )
               }
             >
