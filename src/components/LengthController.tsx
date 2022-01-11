@@ -20,18 +20,18 @@ const LengthController = ({
   lengthId,
   value
 }: LengthControllerProps) => {
-  const buttonSize = 24;
+  const lengthControlIconSize = 24;
 
   return (
     <LengthControlContainer id={id}>
       <div>{label}</div>
       <ButtonsContainer>
         <ButtonStyled id={decrementId}>
-          <Minus size={buttonSize} />
+          <Minus size={lengthControlIconSize} />
         </ButtonStyled>
         <div id={lengthId}>{value}</div>
         <ButtonStyled id={incrementId}>
-          <Plus size={buttonSize} />
+          <Plus size={lengthControlIconSize} />
         </ButtonStyled>
       </ButtonsContainer>
     </LengthControlContainer>
