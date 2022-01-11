@@ -99,7 +99,7 @@ const App = () => {
           </ButtonsContainer>
         </LengthControlContainer>
       </SettingsContainerStyled>
-      <Timer secondsLeft={timeLeft} />
+      <Timer secondsLeft={timeLeft} isSession={isSession} />
       <ButtonsContainer>
         <ButtonStyled id="start_stop">
           {isRunning ? (
