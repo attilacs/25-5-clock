@@ -72,7 +72,12 @@ const App = () => {
             <ButtonStyled
               id="session-decrement"
               onClick={() =>
-                decrementLength(sessionLength, setSessionLength, isRunning)
+                decrementLength(
+                  sessionLength,
+                  setSessionLength,
+                  isRunning,
+                  setTimeLeft
+                )
               }
             >
               <Minus size={lengthControlIconSize} />
@@ -81,7 +86,12 @@ const App = () => {
             <ButtonStyled
               id="session-increment"
               onClick={() =>
-                incrementLength(sessionLength, setSessionLength, isRunning)
+                incrementLength(
+                  sessionLength,
+                  setSessionLength,
+                  isRunning,
+                  setTimeLeft
+                )
               }
             >
               <Plus size={lengthControlIconSize} />
