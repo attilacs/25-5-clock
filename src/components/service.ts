@@ -5,7 +5,8 @@ export const incrementLength = (
 ) => {
   const maxLength = 60;
   if (!isRunning && value < maxLength) {
-    setter(value + 1);
+    const updatedValue = value + 1;
+    setter(updatedValue);
   }
 };
 
@@ -16,6 +17,7 @@ export const decrementLength = (
 ) => {
   const minLength = 1;
   if (!isRunning && minLength < value) {
-    setter(value - 1);
+    const updatedValue = value - 1;
+    setter(updatedValue);
   }
 };
