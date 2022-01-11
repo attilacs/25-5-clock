@@ -17,7 +17,7 @@ const App = () => {
   const [timeLeft, setTimeLeft] = useState(defaultSessionLength * 60);
   const [isSession, setIsSession] = useState(true);
 
-  const iconSize = 48;
+  const timerControlIconSize = 48;
 
   const timerControl = () => {
     setIsRunnig(!isRunning);
@@ -44,13 +44,13 @@ const App = () => {
       <ButtonsContainer>
         <ButtonStyled id="start_stop">
           {isRunning ? (
-            <Pause onClick={timerControl} size={iconSize} />
+            <Pause onClick={timerControl} size={timerControlIconSize} />
           ) : (
-            <Play onClick={timerControl} size={iconSize} />
+            <Play onClick={timerControl} size={timerControlIconSize} />
           )}
         </ButtonStyled>
         <ButtonStyled id="reset">
-          <Reset onClick={resetTimer} size={iconSize} />
+          <Reset onClick={resetTimer} size={timerControlIconSize} />
         </ButtonStyled>
       </ButtonsContainer>
     </>
