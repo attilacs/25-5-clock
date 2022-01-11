@@ -1,11 +1,18 @@
-import { Pause, Play, Reset } from "@styled-icons/boxicons-regular";
+import {
+  Minus,
+  Pause,
+  Play,
+  Plus,
+  Reset
+} from "@styled-icons/boxicons-regular";
 import { useState } from "react";
 import Heading from "./components/Heading";
-import SettingsContainer from "./components/SettingsContainer";
 import Timer from "./components/Timer";
 import AppStyled from "./styles/AppStyled";
 import ButtonsContainer from "./styles/ButtonContainer";
 import ButtonStyled from "./styles/ButtonStyled";
+import { LengthControlContainer } from "./styles/LengthControlStyled";
+import SettingsContainerStyled from "./styles/SettingsContainerStyled";
 
 const App = () => {
   const defaultBreakLength = 5;
@@ -17,6 +24,7 @@ const App = () => {
   const [timeLeft, setTimeLeft] = useState(defaultSessionLength * 60);
   const [isSession, setIsSession] = useState(true);
 
+  const lengthControlIconSize = 24;
   const timerControlIconSize = 48;
 
   const timerControl = () => {
@@ -34,12 +42,32 @@ const App = () => {
     <>
       <AppStyled />
       <Heading />
-      <SettingsContainer
-        breakLength={breakLength}
-        setBreakLength={setBreakLength}
-        sessionLength={sessionLength}
-        setSessionLength={setSessionLength}
-      />
+      <SettingsContainerStyled>
+        <LengthControlContainer id="break-label">
+          <div>Break Length</div>
+          <ButtonsContainer>
+            <ButtonStyled id="break-decrement">
+              <Minus size={lengthControlIconSize} />
+            </ButtonStyled>
+            <div id="break-length">{breakLength}</div>
+            <ButtonStyled id="break-increment">
+              <Plus size={lengthControlIconSize} />
+            </ButtonStyled>
+          </ButtonsContainer>
+        </LengthControlContainer>
+        <LengthControlContainer id="session-label">
+          <div>Session Length</div>
+          <ButtonsContainer>
+            <ButtonStyled id="session-decrement">
+              <Minus size={lengthControlIconSize} />
+            </ButtonStyled>
+            <div id="session-length">{sessionLength}</div>
+            <ButtonStyled id="session-increment">
+              <Plus size={lengthControlIconSize} />
+            </ButtonStyled>
+          </ButtonsContainer>
+        </LengthControlContainer>
+      </SettingsContainerStyled>
       <Timer secondsLeft={timeLeft} />
       <ButtonsContainer>
         <ButtonStyled id="start_stop">
