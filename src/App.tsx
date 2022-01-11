@@ -69,7 +69,12 @@ const App = () => {
         <LengthControlContainer id="session-label">
           <div>Session Length</div>
           <ButtonsContainer>
-            <ButtonStyled id="session-decrement">
+            <ButtonStyled
+              id="session-decrement"
+              onClick={() =>
+                decrementLength(sessionLength, setSessionLength, isRunning)
+              }
+            >
               <Minus size={lengthControlIconSize} />
             </ButtonStyled>
             <div id="session-length">{sessionLength}</div>
