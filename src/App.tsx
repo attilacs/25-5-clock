@@ -41,6 +41,10 @@ const App = () => {
     setTimeLeft(defaultSessionLength * 60);
   };
 
+  const playAudio = () => {
+    audio.current?.play();
+  };
+
   return (
     <>
       <AppStyled />
