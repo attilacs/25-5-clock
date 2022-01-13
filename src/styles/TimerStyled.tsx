@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TimerStyled = styled.div`
-  border: 5px solid black;
+  border: 5px solid #fff;
   border-radius: 50px;
   margin: 0 auto 10px;
   padding: 15px 0;

@@ -4,6 +4,7 @@ const AppStyled = createGlobalStyle`
 body {
   align-items: center;
   background-color: #3b7eca;
+  color:  #fff;
   display: flex;
   flex-direction: column;
   height: 100vh;
