@@ -74,38 +74,44 @@ const App = () => {
     stopAudio();
   };
 
-  const incrementLength = (
-    value: number,
-    setter: React.Dispatch<React.SetStateAction<number>>,
-    isRunning: boolean,
-    timeLeftSetter: React.Dispatch<React.SetStateAction<number>>,
-    mode: string,
-    selected: string
-  ) => {
+  // TODO: fix event type
+  const incrementLength = (event: any) => {
+    if (isRunning) {
+      return;
+    }
     const maxLength = 60;
-    if (!isRunning && value < maxLength) {
-      const updatedValue = value + 1;
-      setter(updatedValue);
-      if (mode === selected && timeLeftSetter) {
-        timeLeftSetter(updatedValue * 60);
+    if (event.target.value === "session") {
+      if (sessionLength < maxLength) {
+        const updatedLength = sessionLength + 1;
+        setTimeLeft(mode === "session" ? updatedLength * 60 : timeLeft);
+        setSessionLength(updatedLength);
+      }
+    } else if (event.target.value === "break") {
+      if (breakLength < maxLength) {
+        const updatedLength = breakLength + 1;
+        setTimeLeft(mode === "break" ? updatedLength * 60 : timeLeft);
+        setBreakLength(updatedLength);
       }
     }
   };
 
-  const decrementLength = (
-    value: number,
-    setter: React.Dispatch<React.SetStateAction<number>>,
-    isRunning: boolean,
-    timeLeftSetter: React.Dispatch<React.SetStateAction<number>>,
-    mode: string,
-    selected: string
-  ) => {
+  // TODO: fix event type
+  const decrementLength = (event: any) => {
+    if (isRunning) {
+      return;
+    }
     const minLength = 1;
-    if (!isRunning && minLength < value) {
-      const updatedValue = value - 1;
-      setter(updatedValue);
-      if (mode === selected && timeLeftSetter) {
-        timeLeftSetter(updatedValue * 60);
+    if (event.target.value === "session") {
+      if (sessionLength > minLength) {
+        const updatedLength = sessionLength - 1;
+        setTimeLeft(mode === "session" ? updatedLength * 60 : timeLeft);
+        setSessionLength(updatedLength);
+      }
+    } else if (event.target.value === "break") {
+      if (breakLength > minLength) {
+        const updatedLength = breakLength - 1;
+        setTimeLeft(mode === "break" ? updatedLength * 60 : timeLeft);
+        setBreakLength(updatedLength);
       }
     }
   };
@@ -140,16 +146,7 @@ const App = () => {
           <ButtonsContainer>
             <ButtonStyled
               id="break-decrement"
-              onClick={() =>
-                decrementLength(
-                  breakLength,
-                  setBreakLength,
-                  isRunning,
-                  setTimeLeft,
-                  mode,
-                  "break"
-                )
-              }
+              onClick={decrementLength}
               value="break"
             >
               <Minus size={lengthControlIconSize} />
@@ -157,16 +154,7 @@ const App = () => {
             <div id="break-length">{breakLength}</div>
             <ButtonStyled
               id="break-increment"
-              onClick={() =>
-                incrementLength(
-                  breakLength,
-                  setBreakLength,
-                  isRunning,
-                  setTimeLeft,
-                  mode,
-                  "break"
-                )
-              }
+              onClick={incrementLength}
               value="break"
             >
               <Plus size={lengthControlIconSize} />
@@ -178,16 +166,7 @@ const App = () => {
           <ButtonsContainer>
             <ButtonStyled
               id="session-decrement"
-              onClick={() =>
-                decrementLength(
-                  sessionLength,
-                  setSessionLength,
-                  isRunning,
-                  setTimeLeft,
-                  mode,
-                  "session"
-                )
-              }
+              onClick={decrementLength}
               value="session"
             >
               <Minus size={lengthControlIconSize} />
@@ -195,16 +174,7 @@ const App = () => {
             <div id="session-length">{sessionLength}</div>
             <ButtonStyled
               id="session-increment"
-              onClick={() =>
-                incrementLength(
-                  sessionLength,
-                  setSessionLength,
-                  isRunning,
-                  setTimeLeft,
-                  mode,
-                  "session"
-                )
-              }
+              onClick={incrementLength}
               value="session"
             >
               <Plus size={lengthControlIconSize} />
