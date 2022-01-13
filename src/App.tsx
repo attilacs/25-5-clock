@@ -1,5 +1,6 @@
 import { Pause, Play, Reset } from "@styled-icons/boxicons-regular";
 import { useEffect, useRef, useState } from "react";
+import Github from "./components/Github";
 import Heading from "./components/Heading";
 import AppStyled from "./styles/AppStyled";
 import ButtonsContainer from "./styles/ButtonContainer";
@@ -210,6 +211,7 @@ const App = () => {
         ref={audio}
         src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
       ></audio>
+      <Github />
     </>
   );
 };
