@@ -7,12 +7,16 @@ import {
 } from "@styled-icons/boxicons-regular";
 import { useEffect, useRef, useState } from "react";
 import Heading from "./components/Heading";
-import Timer from "./components/Timer";
 import AppStyled from "./styles/AppStyled";
 import ButtonsContainer from "./styles/ButtonContainer";
 import ButtonStyled from "./styles/ButtonStyled";
 import { LengthControlContainer } from "./styles/LengthControlStyled";
 import SettingsContainerStyled from "./styles/SettingsContainerStyled";
+import {
+  TimeLeftStyled,
+  TimerLabelStyled,
+  TimerStyled
+} from "./styles/TimerStyled";
 
 const App = () => {
   const audio = useRef<HTMLAudioElement>(null);
@@ -190,7 +194,12 @@ const App = () => {
           </ButtonsContainer>
         </LengthControlContainer>
       </SettingsContainerStyled>
-      <Timer secondsLeft={timeLeft} mode={mode} />
+      <TimerStyled>
+        <TimerLabelStyled id="timer-label">
+          {mode === "session" ? "Session" : "Break"}
+        </TimerLabelStyled>
+        <TimeLeftStyled id="time-left">{displayClock()}</TimeLeftStyled>
+      </TimerStyled>
       <ButtonsContainer>
         <ButtonStyled id="start_stop">
           {isRunning ? (
