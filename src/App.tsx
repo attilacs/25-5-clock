@@ -72,6 +72,7 @@ const App = () => {
     setSessionLength(defaultSessionLength);
     setTimeLeft(defaultSessionLength * 60);
     setMode("session");
+    stopAudio();
   };
 
   const playAudio = () => {
