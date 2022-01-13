@@ -23,7 +23,7 @@ const App = () => {
   const [sessionLength, setSessionLength] = useState(defaultSessionLength);
   const [isRunning, setIsRunnig] = useState(false);
   const [timeLeft, setTimeLeft] = useState(defaultSessionLength * 60);
-  const [isSession, setIsSession] = useState(true);
+  const [mode, setMode] = useState("session");
 
   const lengthControlIconSize = 24;
   const timerControlIconSize = 48;
@@ -55,7 +55,8 @@ const App = () => {
                   setBreakLength,
                   isRunning,
                   setTimeLeft,
-                  !isSession
+                  mode,
+                  "break"
                 )
               }
             >
@@ -70,7 +71,8 @@ const App = () => {
                   setBreakLength,
                   isRunning,
                   setTimeLeft,
-                  !isSession
+                  mode,
+                  "break"
                 )
               }
             >
@@ -89,7 +91,8 @@ const App = () => {
                   setSessionLength,
                   isRunning,
                   setTimeLeft,
-                  isSession
+                  mode,
+                  "session"
                 )
               }
             >
@@ -104,7 +107,8 @@ const App = () => {
                   setSessionLength,
                   isRunning,
                   setTimeLeft,
-                  isSession
+                  mode,
+                  "session"
                 )
               }
             >
@@ -113,7 +117,7 @@ const App = () => {
           </ButtonsContainer>
         </LengthControlContainer>
       </SettingsContainerStyled>
-      <Timer secondsLeft={timeLeft} isSession={isSession} />
+      <Timer secondsLeft={timeLeft} mode={mode} />
       <ButtonsContainer>
         <ButtonStyled id="start_stop">
           {isRunning ? (
