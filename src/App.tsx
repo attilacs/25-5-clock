@@ -5,7 +5,7 @@ import {
   Plus,
   Reset
 } from "@styled-icons/boxicons-regular";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Heading from "./components/Heading";
 import { decrementLength, incrementLength } from "./components/service";
 import Timer from "./components/Timer";
@@ -16,6 +16,8 @@ import { LengthControlContainer } from "./styles/LengthControlStyled";
 import SettingsContainerStyled from "./styles/SettingsContainerStyled";
 
 const App = () => {
+  const audio = useRef<HTMLAudioElement>(null);
+
   const defaultBreakLength = 5;
   const defaultSessionLength = 25;
 
@@ -130,6 +132,11 @@ const App = () => {
           <Reset onClick={resetTimer} size={timerControlIconSize} />
         </ButtonStyled>
       </ButtonsContainer>
+      <audio
+        id="beep"
+        ref={audio}
+        src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+      ></audio>
     </>
   );
 };
