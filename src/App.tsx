@@ -5,7 +5,7 @@ import {
   Plus,
   Reset
 } from "@styled-icons/boxicons-regular";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Heading from "./components/Heading";
 import { decrementLength, incrementLength } from "./components/service";
 import Timer from "./components/Timer";
@@ -29,6 +29,25 @@ const App = () => {
 
   const lengthControlIconSize = 24;
   const timerControlIconSize = 48;
+
+  // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
+  const useInterval = (callback: Function, delay: number | null) => {
+    const savedCallback = useRef(callback);
+
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+
+    useEffect(() => {
+      const tick = () => {
+        savedCallback.current();
+      };
+      if (delay !== null) {
+        const id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+  };
 
   const timerControl = () => {
     setIsRunnig(!isRunning);
