@@ -1,10 +1,4 @@
-import {
-  Minus,
-  Pause,
-  Play,
-  Plus,
-  Reset
-} from "@styled-icons/boxicons-regular";
+import { Pause, Play, Reset } from "@styled-icons/boxicons-regular";
 import { useEffect, useRef, useState } from "react";
 import Heading from "./components/Heading";
 import AppStyled from "./styles/AppStyled";
@@ -30,7 +24,6 @@ const App = () => {
   const [timeLeft, setTimeLeft] = useState(defaultSessionLength * 60);
   const [mode, setMode] = useState("session");
 
-  const lengthControlIconSize = 24;
   const timerControlIconSize = 48;
 
   // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
@@ -161,7 +154,7 @@ const App = () => {
               onClick={decrementLength}
               value="break"
             >
-              <Minus size={lengthControlIconSize} />
+              -
             </ButtonStyled>
             <div id="break-length">{breakLength}</div>
             <ButtonStyled
@@ -169,7 +162,7 @@ const App = () => {
               onClick={incrementLength}
               value="break"
             >
-              <Plus size={lengthControlIconSize} />
+              +
             </ButtonStyled>
           </ButtonsContainer>
         </LengthControlContainer>
@@ -181,7 +174,7 @@ const App = () => {
               onClick={decrementLength}
               value="session"
             >
-              <Minus size={lengthControlIconSize} />
+              -
             </ButtonStyled>
             <div id="session-length">{sessionLength}</div>
             <ButtonStyled
@@ -189,7 +182,7 @@ const App = () => {
               onClick={incrementLength}
               value="session"
             >
-              <Plus size={lengthControlIconSize} />
+              +
             </ButtonStyled>
           </ButtonsContainer>
         </LengthControlContainer>
