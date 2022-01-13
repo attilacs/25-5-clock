@@ -49,6 +49,19 @@ const App = () => {
     }, [delay]);
   };
 
+  useInterval(
+    () => {
+      if (isRunning && timeLeft > 0) {
+        setTimeLeft(timeLeft - 1);
+      }
+      if (timeLeft === 0) {
+        switchMode();
+        playAudio();
+      }
+    },
+    isRunning ? 1000 : null
+  );
+
   const timerControl = () => {
     setIsRunnig(!isRunning);
   };
