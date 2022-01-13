@@ -91,6 +91,10 @@ const App = () => {
     setMode(mode === "session" ? "break" : "session");
   };
 
+  useEffect(() => {
+    setTimeLeft(timeLeft);
+  }, [timeLeft]);
+
   return (
     <>
       <AppStyled />
