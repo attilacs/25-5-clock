@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const AppStyled = createGlobalStyle`
 body {
   align-items: center;
+  background-color: #3b7eca;
   display: flex;
   flex-direction: column;
   height: 100vh;
