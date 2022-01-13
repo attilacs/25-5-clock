@@ -7,6 +7,7 @@ body {
   color:  #fff;
   display: flex;
   flex-direction: column;
+  font-family: sans-serif;
   height: 100vh;
   justify-content: center;
   margin: 0;
