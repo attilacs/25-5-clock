@@ -10,11 +10,11 @@ interface TimerProps {
 }
 
 const Timer = ({ secondsLeft, mode }: TimerProps) => {
-  const label = mode === "session" ? "Session" : "Break";
-
   return (
     <TimerStyled>
-      <TimerLabelStyled id="timer-label">{label}</TimerLabelStyled>
+      <TimerLabelStyled id="timer-label">
+        {mode === "session" ? "Session" : "Break"}
+      </TimerLabelStyled>
       <TimeLeftStyled id="time-left">
         {displayClock(secondsLeft)}
       </TimeLeftStyled>
