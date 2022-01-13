@@ -71,6 +71,7 @@ const App = () => {
     setBreakLength(defaultBreakLength);
     setSessionLength(defaultSessionLength);
     setTimeLeft(defaultSessionLength * 60);
+    setMode("session");
   };
 
   const playAudio = () => {
