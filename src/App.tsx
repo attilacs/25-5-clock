@@ -150,6 +150,7 @@ const App = () => {
                   "break"
                 )
               }
+              value="break"
             >
               <Minus size={lengthControlIconSize} />
             </ButtonStyled>
@@ -166,6 +167,7 @@ const App = () => {
                   "break"
                 )
               }
+              value="break"
             >
               <Plus size={lengthControlIconSize} />
             </ButtonStyled>
@@ -186,6 +188,7 @@ const App = () => {
                   "session"
                 )
               }
+              value="session"
             >
               <Minus size={lengthControlIconSize} />
             </ButtonStyled>
@@ -202,6 +205,7 @@ const App = () => {
                   "session"
                 )
               }
+              value="session"
             >
               <Plus size={lengthControlIconSize} />
             </ButtonStyled>
