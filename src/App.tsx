@@ -201,15 +201,15 @@ const App = () => {
         <TimeLeftStyled id="time-left">{displayClock()}</TimeLeftStyled>
       </TimerStyled>
       <ButtonsContainer>
-        <ButtonStyled id="start_stop">
+        <ButtonStyled id="start_stop" onClick={timerControl}>
           {isRunning ? (
-            <Pause onClick={timerControl} size={timerControlIconSize} />
+            <Pause size={timerControlIconSize} />
           ) : (
-            <Play onClick={timerControl} size={timerControlIconSize} />
+            <Play size={timerControlIconSize} />
           )}
         </ButtonStyled>
-        <ButtonStyled id="reset">
-          <Reset onClick={resetTimer} size={timerControlIconSize} />
+        <ButtonStyled id="reset" onClick={resetTimer}>
+          <Reset size={timerControlIconSize} />
         </ButtonStyled>
       </ButtonsContainer>
       <audio
