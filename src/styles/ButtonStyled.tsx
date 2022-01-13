@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ButtonStyled = styled.div`
+const ButtonStyled = styled.button`
   cursor: pointer;
 `;
 
