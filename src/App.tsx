@@ -45,6 +45,13 @@ const App = () => {
     audio.current?.play();
   };
 
+  const stopAudio = () => {
+    if (audio.current) {
+      audio.current.pause();
+      audio.current.currentTime = 0;
+    }
+  };
+
   return (
     <>
       <AppStyled />
