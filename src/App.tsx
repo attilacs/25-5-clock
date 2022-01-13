@@ -52,6 +52,11 @@ const App = () => {
     }
   };
 
+  const switchMode = () => {
+    setTimeLeft(mode === "session" ? breakLength * 60 : sessionLength * 60);
+    setMode(mode === "session" ? "break" : "session");
+  };
+
   return (
     <>
       <AppStyled />
