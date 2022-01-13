@@ -7,7 +7,7 @@ const SettingsContainerStyled = styled.div`
   justify-content: space-between;
   @media (min-width: 768px) {
     flex-direction: row;
-    width: 400px;
+    width: 420px;
   }
 `;
 
