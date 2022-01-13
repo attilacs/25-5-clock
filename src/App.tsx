@@ -7,7 +7,6 @@ import {
 } from "@styled-icons/boxicons-regular";
 import { useEffect, useRef, useState } from "react";
 import Heading from "./components/Heading";
-import { decrementLength, incrementLength } from "./components/service";
 import Timer from "./components/Timer";
 import AppStyled from "./styles/AppStyled";
 import ButtonsContainer from "./styles/ButtonContainer";
@@ -73,6 +72,42 @@ const App = () => {
     setTimeLeft(defaultSessionLength * 60);
     setMode("session");
     stopAudio();
+  };
+
+  const incrementLength = (
+    value: number,
+    setter: React.Dispatch<React.SetStateAction<number>>,
+    isRunning: boolean,
+    timeLeftSetter: React.Dispatch<React.SetStateAction<number>>,
+    mode: string,
+    selected: string
+  ) => {
+    const maxLength = 60;
+    if (!isRunning && value < maxLength) {
+      const updatedValue = value + 1;
+      setter(updatedValue);
+      if (mode === selected && timeLeftSetter) {
+        timeLeftSetter(updatedValue * 60);
+      }
+    }
+  };
+
+  const decrementLength = (
+    value: number,
+    setter: React.Dispatch<React.SetStateAction<number>>,
+    isRunning: boolean,
+    timeLeftSetter: React.Dispatch<React.SetStateAction<number>>,
+    mode: string,
+    selected: string
+  ) => {
+    const minLength = 1;
+    if (!isRunning && minLength < value) {
+      const updatedValue = value - 1;
+      setter(updatedValue);
+      if (mode === selected && timeLeftSetter) {
+        timeLeftSetter(updatedValue * 60);
+      }
+    }
   };
 
   const playAudio = () => {
